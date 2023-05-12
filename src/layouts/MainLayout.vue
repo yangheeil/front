@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh lpr fFr">
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title> WithJK </q-toolbar-title>
@@ -8,39 +8,17 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer side="right" v-model="drawerRight" show-if-above elevated>
+    <q-drawer show-if-above v-model="drawerRight" side="right" elevated>
       <q-toolbar class="bg-primary text-white">
         <q-toolbar-title> WithJK </q-toolbar-title>
-        <q-btn
-          icon="close"
-          @click="toggleRightDrawer"
-          class="bg-primary glossy"
-          dense
-        />
+        <q-btn icon="close" @click="toggleRightDrawer" class="bg-primary glossy" dense />
       </q-toolbar>
       <q-list>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
       </q-list>
       <div class="q-px-md q-py-sm q-gutter-md">
-        <q-btn
-          to="/login"
-          color="white"
-          text-color="black"
-          label="로그인"
-          rounded
-          class="text-caption glossy"
-        />
-        <q-btn
-          to="/signup"
-          color="primary"
-          label="회원가입"
-          rounded
-          class="text-caption glossy"
-        />
+        <q-btn to="/login" color="white" text-color="black" label="로그인" rounded class="text-caption glossy" />
+        <q-btn to="/signup" color="primary" label="회원가입" rounded class="text-caption glossy" />
         <q-toggle
           v-model="darkmode"
           checked-icon="dark_mode"
