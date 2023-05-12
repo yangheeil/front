@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf" class="shadow-2 rounded-borders">
+  <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title> WithJK </q-toolbar-title>
@@ -8,7 +8,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer side="right" v-model="drawerRight" elevated>
+    <q-drawer side="right" v-model="drawerRight" show-if-above elevated>
       <q-toolbar class="bg-primary text-white">
         <q-toolbar-title> WithJK </q-toolbar-title>
         <q-btn
@@ -25,9 +25,9 @@
           v-bind="link"
         />
       </q-list>
-      <q-separator></q-separator>
       <div class="q-px-md q-py-sm q-gutter-md">
         <q-btn
+          to="/login"
           color="white"
           text-color="black"
           label="로그인"
@@ -35,6 +35,7 @@
           class="text-caption glossy"
         />
         <q-btn
+          to="/signup"
           color="primary"
           label="회원가입"
           rounded
