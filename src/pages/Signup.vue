@@ -1,6 +1,6 @@
 <template>
   <q-page class="text-center flex flex-center q-pa-xl">
-    <div style="max-width: 1023px" class="q-gutter-y-lg column">
+    <div style="max-width: 1023px" class="q-gutter-y-md column">
       <div class="text-h5 text-weight-bold">WithJK에 오신것을 환영합니다.</div>
       <div class="text-subtilte1">WithJK는 오징어 꼴뚜기 대구명태 거북이 입니다.</div>
       <div class="line">SNS 회원가입</div>
