@@ -45,7 +45,12 @@
           >개인정보처리방침</router-link
         >
       </div>
-      <q-btn color="primary" label="회원가입" class="glossy" />
+      <q-btn
+        color="primary"
+        label="회원가입"
+        class="glossy"
+        :disable="password && userid && username && email && usernickname"
+      />
       <div>
         이미 회원이신가요?
         <router-link to="/login">로그인</router-link>

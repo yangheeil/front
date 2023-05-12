@@ -38,7 +38,12 @@
           >계정찾기</router-link
         >
       </div>
-      <q-btn color="primary" label="로그인" class="glossy" />
+      <q-btn
+        color="primary"
+        label="로그인"
+        class="glossy"
+        :disable="password && userid"
+      />
       <div>
         아직 회원이 아닌신가요?
         <router-link to="/signup">회원가입</router-link>
