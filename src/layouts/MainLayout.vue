@@ -8,15 +8,11 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="drawerRight" side="right" elevated>
-      <q-toolbar class="bg-primary text-white">
-        <q-toolbar-title> WithJK </q-toolbar-title>
-        <q-btn icon="close" @click="toggleRightDrawer" class="bg-primary glossy" dense />
-      </q-toolbar>
+    <q-drawer :show-if-above="!$q.screen.xs" v-model="drawerRight" side="right" elevated :breakpoint="0" :width="250">
       <q-list>
         <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
       </q-list>
-      <div class="q-px-md q-py-sm q-gutter-md">
+      <div class="q-px-sm q-py-sm q-gutter-x-sm">
         <q-btn to="/login" color="white" text-color="black" label="로그인" rounded class="text-caption glossy" />
         <q-btn to="/signup" color="primary" label="회원가입" rounded class="text-caption glossy" />
         <q-toggle
@@ -36,7 +32,6 @@
   </q-layout>
 </template>
 
-
 <script setup>
 import { ref } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
@@ -46,7 +41,9 @@ const $q = useQuasar();
 const darkmode = ref(false);
 const drawerRight = ref(false);
 const essentialLinks = linksList;
-const toggleRightDrawer = () => (drawerRight.value = !drawerRight.value);
+const toggleRightDrawer = () => {
+  drawerRight.value = !drawerRight.value;
+};
 const toggleDarkMode = () => $q.dark.toggle();
 </script>
 
@@ -56,27 +53,30 @@ const linksList = [
     title: 'Q&A',
     caption: '기술, 커리어, 기타',
     icon: 'question_answer',
-    to: '',
+    to: '/questions',
   },
   {
     title: '지식',
     caption: 'Tech, 팁, 칼럼',
     icon: 'school',
-    to: '',
+    to: '/knowledge',
   },
   {
     title: '커뮤니티',
     caption: '사는얘기, 스터디',
     icon: 'groups',
-    to: '',
+    to: '/community',
   },
   {
     title: '공지사항',
     caption: '공지사항',
     icon: 'campaign',
-    to: '',
+    to: '/notice',
   },
 ];
 </script>
+
+<style lang="scss" scoped>
+</style>
 
 

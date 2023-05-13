@@ -1,7 +1,8 @@
 // app global css in SCSS form
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css');
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
 }
 body.body--dark {
   color: rgba($color: white, $alpha: 0.76);
@@ -9,6 +10,12 @@ body.body--dark {
 
 .target {
   background: rgba($color: white, $alpha: 0.76);
+}
+.text_target {
+  color: black;
+  .q-item--dark & {
+    color: rgba($color: white, $alpha: 0.76);
+  }
 }
 
 .q-item--dark {
@@ -46,4 +53,9 @@ a {
   height: 1px;
   line-height: 0px;
   margin-left: 14px;
+}
+.q-drawer {
+  body.screen--xs & {
+    width: 100% !important;
+  }
 }

@@ -5,9 +5,9 @@
       <div class="text-subtilte1">WithJK는 오징어 꼴뚜기 대구명태 거북이 입니다.</div>
       <div class="line">SNS 로그인</div>
       <div class="row q-gutter-x-md">
-        <q-btn class="col q-py-sm q-px-sm target"><img src="~assets/google-svg.svg" style="width: 20px" /></q-btn>
-        <q-btn class="col q-py-sm q-px-sm target"><img src="~assets/naver-svg.svg" style="width: 20px" /></q-btn>
-        <q-btn class="col q-py-sm q-px-sm target"><img src="~assets/kakaotalk-svg.svg" style="width: 20px" /></q-btn>
+        <q-btn class="col q-py-sm q-px-sm target"><img src="~assets/google-svg.svg" style="width: 24px" /></q-btn>
+        <q-btn class="col q-py-sm q-px-sm target"><img src="~assets/naver-svg.svg" style="width: 24px" /></q-btn>
+        <q-btn class="col q-py-sm q-px-sm target"><img src="~assets/kakaotalk-svg.svg" style="width: 24px" /></q-btn>
       </div>
       <div class="line">WithJK 아이디로 로그인</div>
       <q-input v-model="userid" outlined type="text" label="아이디" />
