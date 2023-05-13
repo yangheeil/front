@@ -16,6 +16,10 @@
       :breakpoint="600"
       :width="250"
     >
+      <q-toolbar v-if="$q.screen.xs" class="bg-primary text-white shadow-6">
+        <q-toolbar-title> WithJK </q-toolbar-title>
+        <q-btn icon="close" @click="toggleRightDrawer" class="glossy" dense />
+      </q-toolbar>
       <q-list>
         <EssentialLink
           v-for="link in essentialLinks"
