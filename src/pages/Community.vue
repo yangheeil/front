@@ -1,19 +1,38 @@
 <template>
   <q-page class="q-pa-md">
-    <div style="max-width: 723px" class="column q-mx-auto" :class="$q.screen.xs ? 'q-gutter-y-sm' : 'q-gutter-y-md'">
+    <div
+      style="max-width: 723px"
+      class="column q-mx-auto"
+      :class="$q.screen.xs ? 'q-gutter-y-sm' : 'q-gutter-y-md'"
+    >
       <q-banner rounded :class="$q.dark.isActive ? 'target' : 'bg-grey-4'">
         <div class="text-subtitle1 text-weight-bold text-left">커뮤니티</div>
         <div class="text-caption text-left">소통의 장</div>
       </q-banner>
-      <div class="row q-gutter-y-sm text-grey-6 justify-between" v-if="!$q.screen.xs">
+      <div
+        class="row q-gutter-y-sm text-grey-6 justify-between"
+        v-if="!$q.screen.xs"
+      >
         <div>
-          <q-btn flat icon="edit" class="bg-primary" color="white" label="질문하기" />
+          <q-btn
+            flat
+            icon="edit"
+            class="bg-primary"
+            color="white"
+            label="질문하기"
+          />
         </div>
         <div class="q-gutter-x-sm">
           <q-btn v-for="(a, i) in MenuBtn" :key="i" flat :label="a" />
         </div>
         <div>
-          <q-select color="teal" outlined v-model="SortSelect" :options="SortBtn" dense>
+          <q-select
+            color="teal"
+            outlined
+            v-model="SortSelect"
+            :options="SortBtn"
+            dense
+          >
             <template v-slot:prepend>
               <q-icon name="sort" />
             </template>
@@ -25,24 +44,42 @@
           <q-btn v-for="(a, i) in MenuBtn" :key="i" flat :label="a" />
         </div>
         <div class="q-gutter-x-sm">
-          <q-btn flat icon="edit" class="bg-primary float-left" color="white" label="작성하기" />
+          <q-btn
+            flat
+            icon="edit"
+            class="bg-primary float-left"
+            color="white"
+            label="작성하기"
+          />
           <q-btn outline icon="sort" class="float-right">
             <q-menu>
               <q-list>
                 <q-item clickable v-for="(a, i) in SortBtn" :key="i">
-                  <q-time-section>
+                  <q-item-section>
                     <q-item-label>{{ a }}</q-item-label>
-                  </q-time-section>
+                  </q-item-section>
                 </q-item>
               </q-list>
             </q-menu>
           </q-btn>
-          <q-btn outline icon="search" class="float-right" @click="toggleSearchScr" />
+          <q-btn
+            outline
+            icon="search"
+            class="float-right"
+            @click="toggleSearchScr"
+          />
         </div>
       </div>
       <q-separator></q-separator>
       <div v-if="searchScr || !$q.screen.xs">
-        <q-input rounded outlined dense v-model="searchText" icon="search" label="검색">
+        <q-input
+          rounded
+          outlined
+          dense
+          v-model="searchText"
+          icon="search"
+          label="검색"
+        >
           <template v-slot:prepend>
             <q-icon name="search" />
           </template>

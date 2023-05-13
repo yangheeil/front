@@ -8,13 +8,37 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer :show-if-above="!$q.screen.xs" v-model="drawerRight" side="right" elevated :breakpoint="0" :width="250">
+    <q-drawer
+      :show-if-above="!$q.screen.xs"
+      v-model="drawerRight"
+      side="right"
+      elevated
+      :breakpoint="600"
+      :width="250"
+    >
       <q-list>
-        <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
+        <EssentialLink
+          v-for="link in essentialLinks"
+          :key="link.title"
+          v-bind="link"
+        />
       </q-list>
       <div class="q-px-sm q-py-sm q-gutter-x-sm">
-        <q-btn to="/login" color="white" text-color="black" label="로그인" rounded class="text-caption glossy" />
-        <q-btn to="/signup" color="primary" label="회원가입" rounded class="text-caption glossy" />
+        <q-btn
+          to="/login"
+          color="white"
+          text-color="black"
+          label="로그인"
+          rounded
+          class="text-caption glossy"
+        />
+        <q-btn
+          to="/signup"
+          color="primary"
+          label="회원가입"
+          rounded
+          class="text-caption glossy"
+        />
         <q-toggle
           v-model="darkmode"
           checked-icon="dark_mode"
