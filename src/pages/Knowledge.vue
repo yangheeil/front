@@ -27,11 +27,11 @@
         </div>
         <div>
           <q-select
-            color="teal"
             outlined
             v-model="SortSelect"
             :options="SortBtn"
             dense
+            options-dense
           >
             <template v-slot:prepend>
               <q-icon name="sort" />
