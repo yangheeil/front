@@ -51,6 +51,7 @@
             class="bg-primary float-left"
             color="white"
             label="질문하기"
+            to="/questions/new"
           />
           <q-btn outline icon="sort" class="float-right">
             <q-menu>
