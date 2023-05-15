@@ -74,7 +74,7 @@ const isPwd = ref(true);
 const signup = () => {
   console.log(userid.value);
   axios
-    .post('/sign_up', null, {
+    .get('/sign_up', {
       params: {
         userId: userid.value,
       },
