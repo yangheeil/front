@@ -6,7 +6,7 @@
       :class="$q.screen.xs ? 'q-gutter-y-sm' : 'q-gutter-y-md'"
     >
       <div class="text-h5 flex flex-center text-weight-medium">
-        질문 작성하기
+        질문 글 작성하기
       </div>
       <div class="q-gutter-y-xs">
         <div class="text-weight-medium">토픽</div>

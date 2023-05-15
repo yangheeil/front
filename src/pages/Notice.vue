@@ -6,22 +6,13 @@
       :class="$q.screen.xs ? 'q-gutter-y-sm' : 'q-gutter-y-md'"
     >
       <q-banner rounded :class="$q.dark.isActive ? 'target' : 'bg-grey-4'">
-        <div class="text-subtitle1 text-weight-bold text-left">Q&A</div>
-        <div class="text-caption text-left">질문 및 답변</div>
+        <div class="text-subtitle1 text-weight-bold text-left">공지사항</div>
+        <div class="text-caption text-left">공지사항</div>
       </q-banner>
       <div
         class="row q-gutter-y-sm text-grey-6 justify-between"
         v-if="!$q.screen.xs"
       >
-        <div>
-          <q-btn
-            flat
-            icon="edit"
-            class="bg-primary"
-            color="white"
-            label="질문하기"
-          />
-        </div>
         <div class="q-gutter-x-sm">
           <q-btn v-for="(a, i) in MenuBtn" :key="i" flat :label="a" />
         </div>
@@ -42,15 +33,6 @@
       <div class="text-grey-6 q-gutter-y-xs" v-if="$q.screen.xs">
         <div class="q-gutter-x-sm">
           <q-btn v-for="(a, i) in MenuBtn" :key="i" flat :label="a" />
-        </div>
-        <div class="q-gutter-x-sm">
-          <q-btn
-            flat
-            icon="edit"
-            class="bg-primary float-left"
-            color="white"
-            label="질문하기"
-          />
           <q-btn outline icon="sort" class="float-right">
             <q-menu>
               <q-list>

@@ -7,9 +7,20 @@ const routes = [
       { path: 'login', component: () => import('pages/Login.vue') },
       { path: 'signup', component: () => import('pages/Signup.vue') },
       { path: 'questions', component: () => import('pages/Questions.vue') },
-      { path: 'questions/new', component: () => import('pages/New.vue') },
+      {
+        path: 'questions/new',
+        component: () => import('pages/QuestionsNew.vue'),
+      },
       { path: 'knowledge', component: () => import('pages/Knowledge.vue') },
+      {
+        path: 'knowledge/new',
+        component: () => import('pages/KnowledgeNew.vue'),
+      },
       { path: 'community', component: () => import('pages/Community.vue') },
+      {
+        path: 'community/new',
+        component: () => import('pages/CommunityNew.vue'),
+      },
       { path: 'notice', component: () => import('pages/Notice.vue') },
     ],
   },

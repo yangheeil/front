@@ -19,7 +19,8 @@
             icon="edit"
             class="bg-primary"
             color="white"
-            label="질문하기"
+            label="작성하기"
+            to="/community/new"
           />
         </div>
         <div class="q-gutter-x-sm">
@@ -50,6 +51,7 @@
             class="bg-primary float-left"
             color="white"
             label="작성하기"
+            to="/community/new"
           />
           <q-btn outline icon="sort" class="float-right">
             <q-menu>
