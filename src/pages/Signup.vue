@@ -75,7 +75,9 @@ const signup = () => {
   console.log(userid.value);
   axios
     .post('/sign_up', {
-      userId: userid.value,
+      params: {
+        userId: userid.value,
+      },
     })
     .then((result) => {
       console.log(result);
