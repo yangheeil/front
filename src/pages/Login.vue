@@ -42,6 +42,7 @@
         color="primary"
         label="로그인"
         class="glossy"
+        :disable="userId && password"
         @click="$store.dispatch('signin', { userId, password })"
       />
       <div>
