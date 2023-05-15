@@ -81,7 +81,6 @@ const signup = () => {
     })
     .then((result) => {
       console.log(result);
-      window.location.href = '/login';
     });
 };
 </script>
