@@ -18,7 +18,7 @@
         /></q-btn>
       </div>
       <div class="line">회원가입에 필요한 기본정보를 입력해주세요.</div>
-      <q-input v-model="userid" outlined type="text" label="아이디" />
+      <q-input v-model="userId" outlined type="text" label="아이디" />
       <q-input
         v-model="password"
         outlined
@@ -34,8 +34,8 @@
         </template>
       </q-input>
       <q-input v-model="email" outlined type="email" label="이메일" />
-      <q-input v-model="username" outlined type="text" label="실명" />
-      <q-input v-model="usernickname" outlined type="text" label="닉네임" />
+      <q-input v-model="userName" outlined type="text" label="실명" />
+      <q-input v-model="userNickname" outlined type="text" label="닉네임" />
       <div class="row flex flex-center">
         <router-link to="#" style="text-decoration-line: none" class="col"
           >서비스이용약관</router-link
@@ -49,7 +49,16 @@
         color="primary"
         label="회원가입"
         class="glossy"
-        @click="signup()"
+        :disable="password && userId && userName && userNickname && email"
+        @click="
+          $store.dispatch('signup', {
+            password,
+            userId,
+            userName,
+            email,
+            userNickname,
+          })
+        "
       />
       <div>
         이미 회원이신가요?
@@ -59,30 +68,14 @@
   </q-page>
 </template>
 
-
-
-
 <script setup>
-import axios from 'axios';
 import { ref } from 'vue';
 const password = ref('');
-const userid = ref('');
-const username = ref('');
+const userId = ref('');
+const userName = ref('');
 const email = ref('');
-const usernickname = ref('');
+const userNickname = ref('');
 const isPwd = ref(true);
-const signup = () => {
-  console.log(userid.value);
-  axios
-    .get('/sign_up', {
-      params: {
-        userId: userid.value,
-      },
-    })
-    .then((result) => {
-      console.log(result);
-    });
-};
 </script>
 
 <style lang="scss" scoped>

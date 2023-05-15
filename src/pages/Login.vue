@@ -18,7 +18,7 @@
         /></q-btn>
       </div>
       <div class="line">WithJK 아이디로 로그인</div>
-      <q-input v-model="userid" outlined type="text" label="아이디" />
+      <q-input v-model="userId" outlined type="text" label="아이디" />
       <q-input
         v-model="password"
         outlined
@@ -38,7 +38,12 @@
           >계정찾기</router-link
         >
       </div>
-      <q-btn color="primary" label="로그인" class="glossy" @click="signin()" />
+      <q-btn
+        color="primary"
+        label="로그인"
+        class="glossy"
+        @click="$store.dispatch('signin', { userId, password })"
+      />
       <div>
         아직 회원이 아닌신가요?
         <router-link to="/signup">회원가입</router-link>
@@ -47,25 +52,17 @@
   </q-page>
 </template>
 
+
+
 <script setup>
-import axios from 'axios';
 import { ref } from 'vue';
 
 const password = ref('');
-const userid = ref('');
+const userId = ref('');
 const isPwd = ref(true);
-const signin = () => {
-  console.log(userid.value);
-  axios
-    .post('/sign_in', null, {
-      params: {
-        userId: userid.value,
-      },
-    })
-    .then((result) => {
-      console.log(result);
-    });
-};
+</script>
+
+<script>
 </script>
 
 

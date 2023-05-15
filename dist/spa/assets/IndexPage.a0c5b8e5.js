@@ -1,0 +1,1 @@
+import{Q as e}from"./QPage.42c01990.js";import{a0 as a,F as r,G as t,H as c,K as o}from"./index.ac9648ac.js";import"./render.4aca14de.js";const s={};function f(n,_){return r(),t(e,{class:"flex flex-center"},{default:c(()=>[o(" \uAC8C\uC2DC\uD310\uB4E4 \uBCF4\uC5EC\uC8FC\uAE30 ")]),_:1})}var i=a(s,[["render",f]]);export{i as default};
