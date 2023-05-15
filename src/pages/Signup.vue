@@ -49,7 +49,6 @@
         color="primary"
         label="회원가입"
         class="glossy"
-        :disable="userid"
         @click="signup()"
       />
       <div>
@@ -60,21 +59,27 @@
   </q-page>
 </template>
 
+
+
+
 <script setup>
+import axios from 'axios';
 import { ref } from 'vue';
-// const password = ref('');
+const password = ref('');
 const userid = ref('');
-// const username = ref('');
-// const email = ref('');
-// const usernickname = ref('');
-// const isPwd = ref(true);
+const username = ref('');
+const email = ref('');
+const usernickname = ref('');
+const isPwd = ref(true);
 const signup = () => {
-  this.$axios
+  console.log(userid.value);
+  axios
     .post('/sign_up', {
-      userId: userid,
+      userId: userid.value,
     })
     .then((result) => {
       console.log(result);
+      window.location.href = '/login';
     });
 };
 </script>
