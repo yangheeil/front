@@ -5,7 +5,7 @@ export default {
     signup(content, payload) {
       console.log(content, payload);
       axios
-        .post('/sing_up', null, {
+        .post('/sign_up', null, {
           parmas: {
             userId: payload.userId,
             password: payload.password,
