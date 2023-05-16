@@ -21,7 +21,7 @@ export default {
     signin(content, payload) {
       console.log(content, payload);
       axios
-        .post('/sing_in', null, {
+        .post('/sign_in', null, {
           parmas: {
             userId: payload.userId,
             password: payload.password,
